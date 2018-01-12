@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "doc.go",
+        "register.go",
+        "types.go",
+    ],
+    importpath = "k8s.io/client-go/pkg/apis/policy/v1alpha1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/k8s.io/client-go/pkg/api/unversioned:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/api/v1:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/runtime:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/util/intstr:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/watch/versioned:go_default_library",
+    ],
+)

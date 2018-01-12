@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "config.go",
+        "configuration_map.go",
+        "doc.go",
+        "feature_gate.go",
+        "namedcertkey_flag.go",
+    ],
+    importpath = "k8s.io/client-go/pkg/util/config",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/k8s.io/client-go/pkg/util/wait:go_default_library",
+        "//vendor/k8s.io/client-go/vendor/github.com/golang/glog:go_default_library",
+        "//vendor/k8s.io/client-go/vendor/github.com/spf13/pflag:go_default_library",
+    ],
+)

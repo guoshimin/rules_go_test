@@ -1,0 +1,22 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "connection.go",
+        "roundtripper.go",
+        "upgrade.go",
+    ],
+    importpath = "k8s.io/client-go/pkg/util/httpstream/spdy",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/k8s.io/client-go/pkg/api:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/api/errors:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/api/unversioned:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/third_party/forked/golang/netutil:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/util/httpstream:go_default_library",
+        "//vendor/k8s.io/client-go/pkg/util/runtime:go_default_library",
+        "//vendor/k8s.io/client-go/vendor/github.com/docker/spdystream:go_default_library",
+        "//vendor/k8s.io/client-go/vendor/github.com/golang/glog:go_default_library",
+    ],
+)
