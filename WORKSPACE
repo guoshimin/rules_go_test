@@ -1,11 +1,12 @@
 # Bazel WORKSPACE file.
 # https://docs.bazel.build/versions/master/build-ref.html
 
-http_archive(
+git_repository(
     name = "io_bazel_rules_go",
-    url = "https://github.com/bazelbuild/rules_go/releases/download/0.9.0/rules_go-0.9.0.tar.gz",
-    sha256 = "4d8d6244320dd751590f9100cf39fd7a4b75cd901e1f3ffdfd6f048328883695",
+    remote = "https://github.com/bazelbuild/rules_go.git",
+    commit = "f44e447a6fbbf26bfd31305375bf60547aad8a82",
 )
+
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
 go_rules_dependencies()
 go_register_toolchains()
