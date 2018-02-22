@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 go_library(
     name = "go_default_library",
     srcs = ["x.go"],
-    importpath = "bar.com/vendor/foo.com/x",
-    importmap = "foo.com/x",
+    importmap = "bar.com/vendor/foo.com/x",
+    importpath = "foo.com/x",
     visibility = ["//visibility:public"],
 )
